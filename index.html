@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pro Digital Marketer | Hammad Akbar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F5F7FC;
+    --ink:#101323;
+    --muted:#5B6178;
+    --line:#E7E9F2;
+    --blue:#3757F5;
+    --blue-dark:#2440C7;
+    --blue-soft:#EBEFFF;
+    --gold:#F6A821;
+    --gold-soft:#FFF3DF;
+    --green:#1FAE6E;
+    --green-soft:#E7F8EF;
+    --shadow:0 10px 30px rgba(16,19,35,0.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.01em;}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 14px;border-radius:100px;}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;}
+  .brand .mark{width:32px;height:32px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11px;color:var(--muted);}
+  .navlinks{display:flex;gap:28px;font-size:14.5px;color:var(--muted);font-weight:500;}
+  .navlinks a:hover{color:var(--ink);}
+  .navcta{background:var(--blue);color:#fff;font-weight:600;font-size:14px;padding:11px 20px;border-radius:100px;}
+  @media (max-width:760px){.navlinks{display:none;}}
+
+  /* HERO */
+  .hero{padding:72px 0 40px;background:linear-gradient(180deg,var(--bg-soft) 0%, #fff 100%);}
+  .hero-inner{text-align:center;max-width:780px;margin:0 auto;}
+  .kicker{background:var(--blue-soft);color:var(--blue-dark);margin-bottom:22px;}
+  .hero h1{font-size:clamp(32px,5vw,52px);line-height:1.12;}
+  .hero h1 .accent{color:var(--blue);}
+  .hero p.sub{margin-top:20px;font-size:18px;color:var(--muted);max-width:600px;margin-left:auto;margin-right:auto;}
+  .hero-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:32px;}
+  .btn-primary{background:var(--blue);color:#fff;font-weight:700;font-size:15px;padding:16px 30px;border-radius:100px;display:inline-flex;align-items:center;gap:8px;box-shadow:0 8px 20px rgba(55,87,245,0.28);}
+  .btn-secondary{border:1.5px solid var(--line);font-weight:600;font-size:15px;padding:16px 30px;border-radius:100px;color:var(--ink);background:#fff;}
+  .price-note{font-size:13.5px;color:var(--muted);margin-top:16px;}
+  .price-note strong{color:var(--ink);}
+
+  /* STAT BADGES - signature element (matches reference: emoji stat row) */
+  .stat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:44px;}
+  .stat-badge{
+    display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:14px 20px;box-shadow:var(--shadow);
+  }
+  .stat-badge .emoji{font-size:20px;}
+  .stat-badge .val{font-family:'Poppins',sans-serif;font-weight:700;font-size:17px;}
+  .stat-badge .lab{font-size:11.5px;color:var(--muted);}
+
+  /* SECTION GENERIC */
+  section{padding:88px 0;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 48px;}
+  .section-tag{display:inline-block;font-size:13px;font-weight:700;color:var(--blue);background:var(--blue-soft);padding:6px 14px;border-radius:100px;margin-bottom:16px;}
+  .section-head h2{font-size:clamp(26px,3.6vw,36px);}
+  .section-head p{color:var(--muted);font-size:16px;margin-top:14px;}
+
+  /* PAIN POINTS */
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .pain-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow);}
+  .pain-card .emoji{font-size:26px;}
+  .pain-card h3{font-size:17px;margin-top:14px;}
+  .pain-card p{color:var(--muted);font-size:14px;margin-top:8px;}
+  @media (max-width:760px){.pain-grid{grid-template-columns:1fr;}}
+
+  /* ROADMAP / CURRICULUM */
+  .roadmap{position:relative;max-width:760px;margin:0 auto;}
+  .roadmap::before{content:'';position:absolute;left:23px;top:8px;bottom:8px;width:2px;background:var(--line);}
+  .road-step{display:flex;gap:22px;padding-bottom:32px;position:relative;}
+  .road-step:last-child{padding-bottom:0;}
+  .road-num{
+    flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--blue);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-weight:700;
+    font-size:16px;z-index:1;
+  }
+  .road-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;flex:1;box-shadow:var(--shadow);}
+  .road-card h3{font-size:17px;}
+  .road-card p{color:var(--muted);font-size:14px;margin-top:6px;}
+  .road-card .badge{display:inline-block;margin-top:10px;font-size:11px;font-weight:700;color:var(--green);background:var(--green-soft);padding:4px 10px;border-radius:100px;}
+  @media (max-width:600px){.roadmap::before{left:19px;}.road-num{width:40px;height:40px;font-size:14px;}}
+
+  /* INSTRUCTOR */
+  .instructor{display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:center;background:linear-gradient(135deg, #FFF6E9 0%, var(--bg-soft) 55%);border-radius:24px;padding:44px;border:1px solid #F3E3C4;}
+  .instructor-photo{aspect-ratio:1/1;background:#E2A038;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 16px 34px rgba(226,160,56,0.35);}
+  .instructor-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .instructor h3{font-size:24px;}
+  .instructor .role{color:var(--blue);font-weight:600;font-size:14px;margin-top:6px;}
+  .instructor p.bio{color:var(--muted);margin-top:16px;font-size:15.5px;}
+  .instructor-stats{display:flex;gap:28px;margin-top:24px;flex-wrap:wrap;}
+  .instructor-stats .val{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:21px;}
+  .instructor-stats .lab{font-size:12px;color:var(--muted);margin-top:2px;}
+  .social-row{display:flex;gap:12px;margin-top:24px;}
+  .social-pill{display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;padding:10px 18px;border-radius:100px;font-size:13.5px;font-weight:600;}
+  .social-pill:hover{border-color:var(--blue);color:var(--blue);}
+  @media (max-width:760px){.instructor{grid-template-columns:1fr;padding:28px;text-align:center;}.instructor-photo{max-width:180px;margin:0 auto;}.instructor-stats,.social-row{justify-content:center;}}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .testi-card{border:1px dashed var(--line);border-radius:16px;padding:26px;background:var(--bg-soft);}
+  .testi-card .stars{color:var(--gold);font-size:14px;letter-spacing:2px;}
+  .testi-card p{color:var(--muted);font-size:14.5px;margin-top:14px;min-height:80px;}
+  .testi-card .who{display:flex;align-items:center;gap:10px;margin-top:18px;}
+  .testi-card .avatar{width:36px;height:36px;border-radius:50%;background:#fff;border:1px solid var(--line);}
+  .testi-card .name{font-size:13.5px;font-weight:700;}
+  .testi-card .place{font-size:12px;color:var(--muted);}
+  .testi-note{margin-top:24px;font-size:13px;color:var(--muted);text-align:center;}
+  @media (max-width:760px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* PRICING */
+  .pricing-card{
+    border-radius:24px;background:linear-gradient(135deg,var(--blue) 0%, var(--blue-dark) 100%);
+    padding:48px;display:grid;grid-template-columns:1fr 300px;gap:40px;color:#fff;
+  }
+  .pricing-left h3{font-size:22px;color:#fff;}
+  .pricing-left p{color:rgba(255,255,255,0.75);margin-top:10px;font-size:15px;}
+  .includes{margin-top:24px;display:flex;flex-direction:column;gap:12px;}
+  .includes div{display:flex;gap:10px;font-size:14.5px;align-items:flex-start;}
+  .includes .check{color:#8FD8B0;flex-shrink:0;}
+  .pricing-right{background:rgba(255,255,255,0.08);border-radius:18px;padding:28px;display:flex;flex-direction:column;justify-content:center;text-align:center;}
+  .price-tag{font-family:'Poppins',sans-serif;font-weight:800;font-size:40px;}
+  .price-tag span{font-size:15px;color:rgba(255,255,255,0.7);font-weight:500;}
+  .pricing-right .btn-primary{width:100%;justify-content:center;margin-top:18px;background:#fff;color:var(--blue-dark);box-shadow:none;}
+  .pricing-right .price-note{color:rgba(255,255,255,0.65);}
+  @media (max-width:760px){.pricing-card{grid-template-columns:1fr;padding:28px;}}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--line);padding:22px 0;max-width:760px;margin:0 auto;}
+  .faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;font-size:16px;}
+  .faq-q .plus{color:var(--muted);transition:transform 0.2s;font-weight:400;}
+  .faq-item.open .plus{transform:rotate(45deg);color:var(--blue);}
+  .faq-a{max-height:0;overflow:hidden;color:var(--muted);font-size:14.5px;transition:max-height 0.25s ease;}
+  .faq-item.open .faq-a{max-height:200px;padding-top:12px;}
+
+  /* FOOTER */
+  footer{border-top:1px solid var(--line);padding:44px 0;background:var(--bg-soft);}
+  .footer-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+  .footer-row .muted{color:var(--muted);font-size:13px;}
+  .footer-links{display:flex;gap:20px;font-size:13.5px;color:var(--muted);font-weight:500;}
+
+  .final-cta{text-align:center;padding:90px 0;background:var(--bg-soft);}
+  .final-cta h2{font-size:clamp(26px,4vw,40px);max-width:620px;margin:0 auto;}
+  .final-cta .hero-ctas{justify-content:center;margin-top:28px;}
+
+/* TRAINING OVERVIEW */
+.training-overview{padding:70px 0;background:linear-gradient(180deg,#f8faff 0%,#eef3ff 100%);}
+.overview-box{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-dark) 100%);border-radius:24px;padding:48px;color:#fff;text-align:center;}
+.overview-box h2{color:#fff;font-size:38px;margin-bottom:14px;}
+.overview-box p{max-width:720px;margin:0 auto 34px;color:rgba(255,255,255,.82);}
+.overview-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:34px;}
+.overview-stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px;}
+.overview-stat .num{font-family:'Poppins',sans-serif;font-size:42px;font-weight:800;}
+.overview-stat .label{font-size:15px;letter-spacing:.5px;text-transform:uppercase;opacity:.9;}
+.overview-note{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:18px;padding:28px;max-width:860px;margin:0 auto;}
+.overview-note h3{font-size:30px;color:#fff;margin-bottom:10px;}
+.overview-note p{margin:0;color:rgba(255,255,255,.82);}
+@media(max-width:760px){.overview-stats{grid-template-columns:repeat(2,1fr)}.overview-box h2{font-size:30px;}}
+
+
+/* ===== Enhanced Responsive Fixes ===== */
+@media (max-width: 992px){
+  .nav{padding:14px 18px;}
+  .navcta{padding:10px 16px;font-size:13px;}
+  .hero{padding:56px 0 32px;}
+  .stat-row{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+  .pricing-card{grid-template-columns:1fr;}
+}
+@media (max-width:768px){
+  .wrap{padding:0 18px;}
+  header{position:relative;}
+  .brand{font-size:15px;}
+  .brand small{font-size:10px;}
+  .navlinks{display:none!important;}
+  .nav{gap:12px;}
+  .navcta{font-size:13px;padding:10px 14px;white-space:nowrap;}
+  .hero h1{font-size:34px;line-height:1.2;}
+  .hero p.sub{font-size:16px;}
+  .hero-ctas{flex-direction:column;}
+  .hero-ctas a{width:100%;justify-content:center;}
+  .pain-grid,.testi-grid,.overview-stats{grid-template-columns:1fr!important;}
+  .road-step{gap:14px;}
+  .road-card{padding:18px;}
+  .roadmap::before{left:19px;}
+  .instructor{
+    grid-template-columns:1fr!important;
+    text-align:center;
+    gap:24px;
+    padding:28px 22px;
+  }
+  .instructor-photo{
+    width:220px;
+    max-width:100%;
+    margin:0 auto;
+  }
+  .instructor-stats{
+    justify-content:center;
+    gap:18px;
+  }
+  .social-row{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .social-pill{
+    width:100%;
+    justify-content:center;
+  }
+  .pricing-card{padding:24px;}
+  .pricing-right,.pricing-left{text-align:center;}
+  .footer-row{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+@media (max-width:480px){
+  .stat-row{grid-template-columns:1fr;}
+  .price-tag{font-size:32px;}
+  .overview-box h2{font-size:28px;}
+  .overview-note h3{font-size:24px;}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav wrap">
+    <div class="brand">
+      <span class="mark">PDM</span>
+      <div>
+        Pro Digital Marketer
+        <small>by Hammad Akbar</small>
+      </div>
+    </div>
+    <nav class="navlinks">
+      <a href="#curriculum">Curriculum</a>
+      <a href="#instructor">Instructor</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="enroll-step1.html" class="navcta">Enroll — Rs. 7,000</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="pill kicker">🚀 Enrollment open</span>
+    <h1>Stop collecting tutorials. Become a <span class="accent">full-stack digital marketer.</span></h1>
+    <p class="sub">Fundamentals, Facebook Ads, Google Ads, Programmatic, AI Marketing, DV360 and CM360 — one structured course, taught the way real campaigns are actually run.</p>
+    <div class="hero-ctas">
+      <a href="enroll-step1.html" class="btn-primary">Enroll now — Rs. 7,000 →</a>
+      <a href="#curriculum" class="btn-secondary">See what's inside</a>
+    </div>
+    <p class="price-note">One-time payment · Lifetime access · Taught by <strong>Hammad Akbar</strong></p>
+
+    <div class="stat-row">
+      <div class="stat-badge"><span class="emoji">⭐</span><div><div class="val">7,000+</div><div class="lab">Students trained</div></div></div>
+      <div class="stat-badge"><span class="emoji">📈</span><div><div class="val">8 years</div><div class="lab">Running ad campaigns</div></div></div>
+      <div class="stat-badge"><span class="emoji">🎥</span><div><div class="val">5,000+</div><div class="lab">YouTube subscribers</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">The problem</span>
+      <h2>Most people learn digital marketing in scattered pieces</h2>
+      <p>That's exactly why it doesn't turn into a real, paying skill.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="emoji">🎬</div>
+        <h3>Random tutorials</h3>
+        <p>Bits and pieces from ten different channels, none of it connected into a system you can run for a real client.</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">🖥️</div>
+        <h3>No real ad account practice</h3>
+        <p>Slides instead of live Ads Manager, DV360 and CM360 walkthroughs — so nothing transfers to an actual campaign.</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">🤖</div>
+        <h3>Left behind on AI</h3>
+        <p>Marketing is moving fast. Without AI built into your workflow, you're learning an already-outdated version of the job.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="curriculum" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Your roadmap</span>
+      <h2>Everything inside Pro Digital Marketer</h2>
+      <p>Eight modules, structured the way a real marketing career is built — from fundamentals to platforms to AI to monetization.</p>
+    </div>
+    <div class="roadmap">
+      <div class="road-step">
+        <div class="road-num">1</div>
+        <div class="road-card"><h3>Fundamentals of Digital Marketing</h3><p>The core concepts, funnels and terminology every module after this one builds on.</p><span class="badge">Foundation</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">2</div>
+        <div class="road-card"><h3>Pro Facebook Ads</h3><p>Campaign structure, targeting, creative testing and scaling inside Meta Ads Manager.</p><span class="badge">Platform</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">3</div>
+        <div class="road-card"><h3>Pro Google Ads</h3><p>Search, display and shopping campaigns built to convert, not just get clicks.</p><span class="badge">Platform</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">4</div>
+        <div class="road-card"><h3>Programmatic Marketing</h3><p>How programmatic buying actually works and where it fits next to social and search.</p><span class="badge">Advanced</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">5</div>
+        <div class="road-card"><h3>Marketing with AI</h3><p>AI tools folded into research, creative production and campaign optimization.</p><span class="badge">Advanced</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">6</div>
+        <div class="road-card"><h3>DV360</h3><p>Google's Display and Video 360 platform — setup, targeting and reporting.</p><span class="badge">Programmatic</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">7</div>
+        <div class="road-card"><h3>CM360</h3><p>Campaign Manager 360 for ad serving, tracking and cross-platform measurement.</p><span class="badge">Programmatic</span></div>
+      </div>
+      <div class="road-step">
+        <div class="road-num">8</div>
+        <div class="road-card"><h3>Digital Products & Templates</h3><p>Ready-to-use templates and product frameworks to launch or sell your own offers.</p><span class="badge">Monetize</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</section>
+
+<section class="training-overview">
+  <div class="wrap">
+    <div class="overview-box">
+      <h2>Training Overview</h2>
+      <p>Your complete digital marketing journey at a glance. Learn in a structured, step-by-step format designed to make you job and freelance ready.</p>
+      <div class="overview-stats">
+        <div class="overview-stat"><div class="num">5</div><div class="label">Modules</div></div>
+        <div class="overview-stat"><div class="num">120+</div><div class="label">Lectures</div></div>
+        <div class="overview-stat"><div class="num">5</div><div class="label">Skills</div></div>
+        <div class="overview-stat"><div class="num">45</div><div class="label">Hours</div></div>
+      </div>
+      <div class="overview-note">
+        <h3>No Upsells. No Hidden Costs.</h3>
+        <p>One payment gives you lifetime access to every module, lecture, downloadable resource and future course updates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="instructor">
+
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Your instructor</span>
+      <h2>Meet Hammad Akbar</h2>
+    </div>
+    <div class="instructor">
+      <div class="instructor-photo"><img src="1.png" alt="Hammad Akbar"></div>
+      <div>
+        <h3>Hammad Akbar</h3>
+        <div class="role">Founder, Pro Digital Marketer · @tarakkipazeer</div>
+        <p class="bio">Hammad Akbar has spent 8 years running digital marketing and ad campaigns, and built the TarakkiPazeer community to help people learn practical, income-generating digital skills. Pro Digital Marketer brings that same hands-on approach to Facebook Ads, Google Ads, programmatic advertising and AI-powered marketing — taught the way it's actually run inside real ad accounts.</p>
+        <div class="instructor-stats">
+          <div><span class="val">8</span><span class="lab">Years experience</span></div>
+          <div><span class="val">7,000+</span><span class="lab">Students taught</span></div>
+          <div><span class="val">5,000+</span><span class="lab">YouTube subscribers</span></div>
+        </div>
+        <div class="social-row">
+          <a class="social-pill" href="https://www.instagram.com/tarakkipazeer/" target="_blank" rel="noopener">📷 Instagram · @tarakkipazeer</a>
+          <a class="social-pill" href="https://www.youtube.com/@tarakkipazeer" target="_blank" rel="noopener">▶ YouTube · Tarakki Pazeer</a>
+          <a class="social-pill" href="https://tarakkipazeer.com" target="_blank" rel="noopener">🌐 tarakkipazeer.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Student results</span>
+      <h2>What students are saying</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I finally understood Meta and Google Ads in a practical way. Within a month I landed my first freelance client. The lectures are clear and straight to the point."</p>
+        <div class="who"><div class="avatar"></div><div><div class="name">Ali Raza</div><div class="place">Lahore · Freelance Marketer</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The AI marketing and Facebook Ads modules alone were worth the price. I started running campaigns for my family business with confidence."</p>
+        <div class="who"><div class="avatar"></div><div><div class="name">Ayesha Khan</div><div class="place">Islamabad · Business Owner</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I had watched countless YouTube videos before, but this course gave me a complete roadmap. Highly recommended for anyone serious about digital marketing."</p>
+        <div class="who"><div class="avatar"></div><div><div class="name">Muhammad Usman</div><div class="place">Karachi · Student</div></div></div>
+      </div>
+    </div>
+    <p class="testi-note">Trusted by thousands of students across Pakistan who have used these skills for freelancing, business growth and career development.</p>
+  </div>
+</section>
+
+<section id="enroll">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Enrollment</span>
+      <h2>Join Pro Digital Marketer</h2>
+      <p>Pay once, learn forever.</p>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-left">
+        <h3>Full course access</h3>
+        <p>Everything in the roadmap above, delivered as one structured system — no scattered tutorials, no guesswork.</p>
+        <div class="includes">
+          <div><span class="check">✓</span> All 8 modules — Fundamentals through AI marketing</div>
+          <div><span class="check">✓</span> Live Facebook Ads, Google Ads, DV360 and CM360 walkthroughs</div>
+          <div><span class="check">✓</span> Digital products & templates to launch your own offers</div>
+          <div><span class="check">✓</span> Lifetime access to all course content</div>
+        </div>
+      </div>
+      <div class="pricing-right">
+        <div class="price-tag">Rs. 7,000<br><span><span style="text-decoration:line-through;opacity:.9;">Rs. 12,000</span> · Limited Time Offer</span></div>
+        <a href="enroll-step1.html" class="btn-primary">Enroll now</a>
+        <p class="price-note">Secure checkout · Instant access</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--bg-soft);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-tag">Questions</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Who is this course for? <span class="plus">+</span></div>
+        <div class="faq-a">Anyone who wants to run digital marketing professionally — beginners building a foundation, and freelancers or marketers who want to add programmatic, AI and DV360/CM360 to their skill set.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need prior experience? <span class="plus">+</span></div>
+        <div class="faq-a">No. The course starts with the fundamentals of digital marketing before moving into Facebook Ads, Google Ads and the more advanced programmatic and AI modules.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How long do I have access? <span class="plus">+</span></div>
+        <div class="faq-a">You get lifetime access to all course content, including any future updates to the modules.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What payment methods are accepted? <span class="plus">+</span></div>
+        <div class="faq-a">Add your payment details here — bank transfer, JazzCash, Easypaisa, or your checkout provider.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="final-cta">
+  <div class="wrap">
+    <h2>Stop learning digital marketing in pieces. Learn it as one system.</h2>
+    <div class="hero-ctas">
+      <a href="enroll-step1.html" class="btn-primary">Enroll now — Rs. 7,000 →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap footer-row">
+    <div class="muted">© 2026 Pro Digital Marketer · Hammad Akbar</div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/tarakkipazeer/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tarakkipazeer.com" target="_blank" rel="noopener">tarakkipazeer.com</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
