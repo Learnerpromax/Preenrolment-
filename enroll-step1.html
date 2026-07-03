@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Your Spot | Pro Digital Marketer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F5F7FC;
+    --ink:#101323;
+    --muted:#5B6178;
+    --line:#E7E9F2;
+    --blue:#3757F5;
+    --blue-dark:#2440C7;
+    --blue-soft:#EBEFFF;
+    --gold:#F6A821;
+    --gold-soft:#FFF3DF;
+    --green:#1FAE6E;
+    --green-soft:#E7F8EF;
+    --whatsapp:#25D366;
+    --shadow:0 10px 30px rgba(16,19,35,0.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg-soft);color:var(--ink);
+    font-family:'Inter',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  h1,h2,h3,.display{font-family:'Poppins',sans-serif;font-weight:700;letter-spacing:-0.01em;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav{max-width:760px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 24px;}
+  .brand{display:flex;align-items:center;gap:10px;font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;}
+  .brand .mark{width:32px;height:32px;border-radius:9px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;}
+  .brand small{display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11px;color:var(--muted);}
+
+  /* PROGRESS */
+  .progress-shell{background:#fff;border-bottom:1px solid var(--line);padding:18px 0;}
+  .progress{display:flex;align-items:center;gap:10px;max-width:760px;margin:0 auto;padding:0 24px;}
+  .step{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);}
+  .step .circle{width:24px;height:24px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-family:'Poppins',sans-serif;}
+  .step.active{color:var(--ink);}
+  .step.pending .circle{background:var(--line);color:var(--muted);}
+  .step-line{flex:1;height:1px;background:var(--line);max-width:40px;}
+
+  /* HERO */
+  .hero{padding:48px 0 8px;text-align:center;}
+  .kicker{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:7px 14px;border-radius:100px;background:var(--blue-soft);color:var(--blue-dark);}
+  .hero h1{font-size:clamp(26px,4.4vw,36px);margin-top:18px;}
+  .hero p{color:var(--muted);font-size:15.5px;margin-top:14px;max-width:560px;margin-left:auto;margin-right:auto;}
+  .hero p strong{color:var(--ink);}
+
+  /* AMOUNT CALLOUT */
+  .amount-card{
+    margin:32px auto 0;max-width:340px;background:linear-gradient(135deg,var(--blue) 0%, var(--blue-dark) 100%);
+    border-radius:18px;padding:24px;text-align:center;color:#fff;box-shadow:0 14px 30px rgba(55,87,245,0.25);
+  }
+  .amount-card .lab{font-size:12.5px;opacity:0.8;text-transform:uppercase;letter-spacing:0.04em;}
+  .amount-card .amt{font-family:'Poppins',sans-serif;font-weight:800;font-size:36px;margin-top:6px;}
+
+  /* SECTION */
+  section{padding:44px 0;}
+  .section-title{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+  .section-title .num{width:26px;height:26px;border-radius:50%;background:var(--ink);color:#fff;font-size:12.5px;font-family:'Poppins',sans-serif;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .section-title h2{font-size:19px;}
+
+  /* PAYMENT CARDS */
+  .pay-grid{display:grid;gap:16px;}
+  .pay-card{
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;
+    box-shadow:var(--shadow);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  }
+  .pay-left{display:flex;align-items:center;gap:14px;}
+  .pay-icon{
+    width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+    font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:#fff;flex-shrink:0;
+  }
+  .icon-meezan{background:#0B5E3F;}
+  .icon-jazzcash{background:#E4022B;}
+  .icon-easypaisa{background:#1E7A3D;}
+  .pay-bank{font-family:'Poppins',sans-serif;font-weight:700;font-size:15.5px;}
+  .pay-title{font-size:13px;color:var(--muted);margin-top:2px;}
+  .pay-number-row{display:flex;align-items:center;gap:10px;}
+  .pay-number{font-family:'Poppins',sans-serif;font-weight:700;font-size:16px;letter-spacing:0.02em;}
+  .copy-btn{
+    display:flex;align-items:center;gap:6px;background:var(--bg-soft);border:1px solid var(--line);
+    padding:8px 13px;border-radius:9px;font-size:12.5px;font-weight:600;color:var(--ink);transition:all 0.15s;
+  }
+  .copy-btn:hover{border-color:var(--blue);color:var(--blue);}
+  .copy-btn.copied{background:var(--green-soft);border-color:var(--green);color:var(--green);}
+  @media (max-width:480px){.pay-card{flex-direction:column;align-items:flex-start;}.pay-number-row{width:100%;justify-content:space-between;}}
+
+  /* UPLOAD */
+  .upload-box{
+    background:#fff;border:2px dashed var(--line);border-radius:18px;padding:36px 24px;text-align:center;
+    box-shadow:var(--shadow);transition:border-color 0.2s;
+  }
+  .upload-box.dragover{border-color:var(--blue);background:var(--blue-soft);}
+  .upload-icon{font-size:30px;}
+  .upload-box h3{font-size:16px;margin-top:12px;}
+  .upload-box p{font-size:13.5px;color:var(--muted);margin-top:6px;}
+  .upload-btn{
+    display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--ink);color:#fff;
+    font-weight:600;font-size:14px;padding:12px 22px;border-radius:100px;border:none;
+  }
+  #fileInput{display:none;}
+  .preview{display:none;margin-top:18px;background:var(--bg-soft);border-radius:12px;padding:12px;align-items:center;gap:12px;text-align:left;}
+  .preview.show{display:flex;}
+  .preview img{width:52px;height:52px;object-fit:cover;border-radius:8px;border:1px solid var(--line);}
+  .preview .fname{font-size:13.5px;font-weight:600;}
+  .preview .fsize{font-size:12px;color:var(--muted);}
+  .preview .remove{margin-left:auto;color:var(--muted);font-size:13px;background:none;border:none;}
+
+  /* SUBMIT */
+  .submit-btn{
+    width:100%;background:var(--blue);color:#fff;font-weight:700;font-size:15.5px;padding:17px;
+    border-radius:14px;border:none;margin-top:22px;box-shadow:0 10px 22px rgba(55,87,245,0.28);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+  }
+  .submit-btn:disabled{background:var(--line);color:var(--muted);box-shadow:none;cursor:not-allowed;}
+  .fine-print{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px;}
+
+  /* TRUST STRIP */
+  .trust-strip{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:36px;padding-top:28px;border-top:1px solid var(--line);}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);font-weight:500;}
+
+  footer{text-align:center;padding:36px 0 100px;font-size:13px;color:var(--muted);}
+
+  /* WHATSAPP FAB */
+  .wa-fab{
+    position:fixed;bottom:24px;right:24px;z-index:100;
+    background:var(--whatsapp);color:#fff;width:60px;height:60px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,0.45);
+    transition:transform 0.15s;
+  }
+  .wa-fab:hover{transform:scale(1.06);}
+  .wa-fab svg{width:30px;height:30px;}
+  .wa-pulse{
+    position:absolute;inset:0;border-radius:50%;background:var(--whatsapp);
+    animation:pulse 2.2s infinite;z-index:-1;
+  }
+  @keyframes pulse{0%{transform:scale(1);opacity:0.55;}100%{transform:scale(1.9);opacity:0;}}
+  .wa-tooltip{
+    position:fixed;bottom:34px;right:94px;z-index:100;background:var(--ink);color:#fff;
+    font-size:13px;font-weight:500;padding:9px 14px;border-radius:9px;white-space:nowrap;
+    opacity:0;transform:translateX(6px);transition:all 0.2s;pointer-events:none;
+  }
+  .wa-fab:hover + .wa-tooltip{opacity:1;transform:translateX(0);}
+  @media (max-width:480px){.wa-tooltip{display:none;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">
+      <span class="mark">PDM</span>
+      <div>
+        Pro Digital Marketer
+        <small>by Hammad Akbar</small>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="progress-shell">
+  <div class="progress">
+    <div class="step active"><span class="circle">1</span> Secure Your Spot</div>
+    <div class="step-line"></div>
+    <div class="step pending"><span class="circle">2</span> Create Account</div>
+    <div class="step-line"></div>
+    <div class="step pending"><span class="circle">3</span> Start Learning</div>
+  </div>
+</div>
+
+<div class="hero wrap">
+  <span class="kicker">🔒 Step 1 of 3</span>
+  <h1>Secure your spot</h1>
+  <p>To unlock the <strong>Freelance Profit System</strong>, transfer the amount below to any account, then upload your receipt to proceed to account creation.</p>
+  <div class="amount-card">
+    <div class="lab">Amount to transfer</div>
+    <div class="amt">PKR 12,000</div>
+  </div>
+</div>
+
+<section class="wrap">
+  <div class="section-title"><span class="num">1</span><h2>Transfer to any account below</h2></div>
+  <div class="pay-grid">
+
+    <div class="pay-card">
+      <div class="pay-left">
+        <div class="pay-icon icon-meezan">MB</div>
+        <div>
+          <div class="pay-bank">Meezan Bank</div>
+          <div class="pay-title">Account title — Hammad Akbar</div>
+        </div>
+      </div>
+      <div class="pay-number-row">
+        <div class="pay-number" id="num1">05210107374868</div>
+        <button class="copy-btn" onclick="copyNum('num1', this)">📋 Copy</button>
+      </div>
+    </div>
+
+    <div class="pay-card">
+      <div class="pay-left">
+        <div class="pay-icon icon-jazzcash">JC</div>
+        <div>
+          <div class="pay-bank">JazzCash</div>
+          <div class="pay-title">Account title — Nimrah Usman</div>
+        </div>
+      </div>
+      <div class="pay-number-row">
+        <div class="pay-number" id="num2">03030280154</div>
+        <button class="copy-btn" onclick="copyNum('num2', this)">📋 Copy</button>
+      </div>
+    </div>
+
+    <div class="pay-card">
+      <div class="pay-left">
+        <div class="pay-icon icon-easypaisa">EP</div>
+        <div>
+          <div class="pay-bank">EasyPaisa</div>
+          <div class="pay-title">Account title — Hammad Akbar</div>
+        </div>
+      </div>
+      <div class="pay-number-row">
+        <div class="pay-number" id="num3">03156026079</div>
+        <button class="copy-btn" onclick="copyNum('num3', this)">📋 Copy</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:8px;">
+  <div class="section-title"><span class="num">2</span><h2>Upload your payment screenshot</h2></div>
+
+  <div class="upload-box" id="uploadBox">
+    <div class="upload-icon">📎</div>
+    <h3>Drag & drop your receipt here</h3>
+    <p>PNG, JPG or PDF — max 10MB</p>
+    <button class="upload-btn" onclick="document.getElementById('fileInput').click()">Choose file</button>
+    <input type="file" id="fileInput" accept="image/*,.pdf">
+
+    <div class="preview" id="preview">
+      <img id="previewImg" src="" alt="">
+      <div>
+        <div class="fname" id="previewName"></div>
+        <div class="fsize" id="previewSize"></div>
+      </div>
+      <button class="remove" onclick="clearFile()">Remove</button>
+    </div>
+  </div>
+
+  <button class="submit-btn" id="submitBtn" disabled onclick="submitReceipt()">Continue to Account Creation →</button>
+  <p class="fine-print">Clicking continue opens WhatsApp so you can send your receipt directly to Hammad for verification.</p>
+
+  <div class="trust-strip">
+    <div class="trust-item">✅ 7,000+ students enrolled</div>
+    <div class="trust-item">🔒 Manually verified within 24 hrs</div>
+    <div class="trust-item">💬 Direct support on WhatsApp</div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Pro Digital Marketer · Hammad Akbar · Having trouble? Message us on WhatsApp below.
+</footer>
+
+<a class="wa-fab" href="https://wa.me/923048568855?text=Hi%20Hammad%2C%20I%27ve%20paid%20for%20Pro%20Digital%20Marketer%20and%20I%27m%20sending%20my%20receipt." target="_blank" rel="noopener">
+  <span class="wa-pulse"></span>
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M20.52 3.449C12.831-3.984.106 1.407.101 11.893c0 2.096.549 4.14 1.595 5.945L0 24l6.335-1.652c1.746.943 3.71 1.444 5.71 1.444h.005c9.398 0 15.126-11.132 8.47-20.343zM12.05 21.785h-.004c-1.783 0-3.531-.477-5.06-1.378l-.363-.216-3.759.98 1.003-3.664-.237-.375c-.98-1.559-1.499-3.362-1.499-5.238 0-8.396 9.088-13.703 16.34-9.523 3.4 1.958 5.522 5.577 5.5 9.5-.03 6.75-5.484 12.914-11.921 9.914z"/></svg>
+</a>
+<div class="wa-tooltip">Chat with us on WhatsApp</div>
+
+<script>
+  const fileInput = document.getElementById('fileInput');
+  const uploadBox = document.getElementById('uploadBox');
+  const preview = document.getElementById('preview');
+  const submitBtn = document.getElementById('submitBtn');
+  let currentFile = null;
+
+  fileInput.addEventListener('change', e => handleFile(e.target.files[0]));
+
+  ['dragover','dragenter'].forEach(evt => uploadBox.addEventListener(evt, e => { e.preventDefault(); uploadBox.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(evt => uploadBox.addEventListener(evt, e => { e.preventDefault(); uploadBox.classList.remove('dragover'); }));
+  uploadBox.addEventListener('drop', e => { if(e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); });
+
+  function handleFile(file){
+    if(!file) return;
+    currentFile = file;
+    document.getElementById('previewName').textContent = file.name;
+    document.getElementById('previewSize').textContent = (file.size/1024).toFixed(0) + ' KB';
+    const img = document.getElementById('previewImg');
+    if(file.type.startsWith('image/')){
+      img.src = URL.createObjectURL(file);
+      img.style.display = 'block';
+    } else {
+      img.style.display = 'none';
+    }
+    preview.classList.add('show');
+    submitBtn.disabled = false;
+  }
+
+  function clearFile(){
+    currentFile = null;
+    fileInput.value = '';
+    preview.classList.remove('show');
+    submitBtn.disabled = true;
+  }
+
+  function copyNum(id, btn){
+    const text = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = '✅ Copied';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.innerHTML = original; btn.classList.remove('copied'); }, 1800);
+    });
+  }
+
+  function submitReceipt(){
+    if(!currentFile) return;
+    const msg = encodeURIComponent("Hi Hammad, I've paid PKR 12,000 for Pro Digital Marketer. Attaching my receipt (" + currentFile.name + ") now.");
+    window.open("https://wa.me/923048568855?text=" + msg, "_blank");
+  }
+</script>
+
+</body>
+</html>
